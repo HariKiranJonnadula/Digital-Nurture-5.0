@@ -31,3 +31,25 @@ tmp/
 *.sw?
 .DS_Store
 Thumbs.db
+
+# Local untracked solutions
+solution/Angular/
+solution/GIT/
+solution/Microservices/
+solution/PL SQL programming/
+solution/SLF4J logging/
+solution/Spring Core and Maven/
+solution/Spring Data JPA/
+solution/Spring REST/
+solution/TDD JUnit Mockito/
+
+# Root level untracked directories
+Angular/
+GIT/
+JUnit, Mockito and SL4J/
+Microservices/
+PL SQL programming/
+Spring Core and Maven/
+Spring Data JPA with Hibernate/
+Spring REST using Spring Boot/
+
