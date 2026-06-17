@@ -1,4 +1,3 @@
-package com.example.singleton;
 
 public class Logger {
     // Private static instance of the same class (volatile to ensure thread safety during double-checked locking)

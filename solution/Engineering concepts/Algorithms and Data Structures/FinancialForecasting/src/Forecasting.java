@@ -1,5 +1,3 @@
-package com.example.forecast;
-
 import java.util.HashMap;
 import java.util.Map;
 

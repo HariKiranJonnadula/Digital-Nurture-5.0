@@ -1,5 +1,3 @@
-package com.example.forecast;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== Testing Financial Forecasting ===");

@@ -1,5 +1,3 @@
-package com.example.search;
-
 import java.util.Arrays;
 
 public class Main {

@@ -1,5 +1,3 @@
-package com.example.factory;
-
 public abstract class DocumentFactory {
     // Factory Method to be implemented by subclasses
     public abstract Document createDocument();

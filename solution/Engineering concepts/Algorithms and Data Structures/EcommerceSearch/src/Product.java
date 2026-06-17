@@ -1,5 +1,3 @@
-package com.example.search;
-
 public class Product implements Comparable<Product> {
     private String productId;
     private String productName;
