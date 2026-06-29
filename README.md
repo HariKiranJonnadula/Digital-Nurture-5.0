@@ -74,4 +74,4 @@ Frontend components and bindings:
 
 ## Technical Simplification (Flat Packaging)
 
-To simplify standalone workspace navigation, the package structures of all Java projects have been **flattened** into a single root `app` package folder (`src/main/java/app`). Unnecessary nesting (e.g. `com/example/controller/`) has been removed, and custom configurations (such as XML bean loading contexts) have been updated accordingly to refer to the `app` namespace.
+To simplify standalone workspace navigation, the package structures of all Java projects have been **flattened** into a single root `app` package folder (`src/main/java/app`).
