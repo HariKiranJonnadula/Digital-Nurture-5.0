@@ -1,0 +1,111 @@
+Cognizant Digital Nurture 5.0 - Git Hands-on Lab Solutions
+
+================================================================================
+HANDS-ON LAB 1: Setting up Repository & Basic Operations
+================================================================================
+1. Initialize local repository:
+   $ git init
+
+2. Configure user credentials locally:
+   $ git config --local user.name "Hari Kiran"
+   $ git config --local user.email "harikiranjonnadula123@gmail.com"
+
+3. Create index.html and stage it:
+   $ echo "<h1>Hello Git</h1>" > index.html
+   $ git add index.html
+
+4. Check repository status:
+   $ git status
+
+5. Commit the changes:
+   $ git commit -m "Initial commit - Added index.html"
+
+================================================================================
+HANDS-ON LAB 2: Working with Branches (Feature Development)
+================================================================================
+1. Create and switch to a new branch named 'feature-login':
+   $ git checkout -b feature-login
+
+2. Add a new file 'login.html' and stage/commit it:
+   $ echo "<form>Login Form</form>" > login.html
+   $ git add login.html
+   $ git commit -m "Added login form screen"
+
+3. Switch back to master branch:
+   $ git checkout master
+
+4. Merge the 'feature-login' branch into master:
+   $ git merge feature-login
+
+5. Delete the feature branch once merged:
+   $ git branch -d feature-login
+
+================================================================================
+HANDS-ON LAB 3: Resolving Merge Conflicts
+================================================================================
+1. Create new branch 'conflict-branch':
+   $ git checkout -b conflict-branch
+
+2. Modify line 1 in 'index.html' on conflict-branch, stage and commit:
+   $ echo "<h1>Hello Git from Conflict Branch</h1>" > index.html
+   $ git commit -am "Updated header in conflict branch"
+
+3. Switch back to master:
+   $ git checkout master
+
+4. Modify line 1 in 'index.html' on master to a different text, stage and commit:
+   $ echo "<h1>Hello Git from Master Branch</h1>" > index.html
+   $ git commit -am "Updated header in master branch"
+
+5. Attempt to merge conflict-branch into master (triggers conflict):
+   $ git merge conflict-branch
+   # Auto-merging index.html
+   # CONFLICT (content): Merge conflict in index.html
+   # Automatic merge failed; fix conflicts and then commit the result.
+
+6. Edit 'index.html' to manually resolve the conflict markers:
+   <<<<<<< HEAD
+   <h1>Hello Git from Master Branch</h1>
+   =======
+   <h1>Hello Git from Conflict Branch</h1>
+   >>>>>>> conflict-branch
+   
+   # Cleaned file to:
+   <h1>Hello Git - Conflict Resolved</h1>
+
+7. Stage the resolved file and finalize the merge commit:
+   $ git add index.html
+   $ git commit -m "Resolved merge conflict in index.html"
+
+================================================================================
+HANDS-ON LAB 4: Git Stash & Un-stash Operations
+================================================================================
+1. Make changes to 'index.html' but do not commit:
+   $ echo "<p>Unfinished work description</p>" >> index.html
+
+2. Stash the modifications to clean the working directory:
+   $ git stash save "WIP: index page footer update"
+
+3. Verify stashed list and clean state:
+   $ git stash list
+   $ git status
+
+4. Apply the stashed changes back and drop the stash from stack:
+   $ git stash pop
+
+================================================================================
+HANDS-ON LAB 5: Rebase & Cherry-Pick
+================================================================================
+* Scenario A: Rebase (Keep a flat linear history)
+  1. Switch to 'feature-branch' and run rebase against master:
+     $ git checkout feature-branch
+     $ git rebase master
+  2. Resolve any conflicts if triggered, and run:
+     $ git rebase --continue
+
+* Scenario B: Cherry-Pick (Apply a specific commit from one branch to another)
+  1. Find the commit ID (SHA) from another branch:
+     $ git log --oneline --all
+  2. Switch to target branch (e.g. master) and cherry-pick the specific commit:
+     $ git checkout master
+     $ git cherry-pick a1b2c3d4
